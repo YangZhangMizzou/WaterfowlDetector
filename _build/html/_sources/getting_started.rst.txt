@@ -1,102 +1,50 @@
-.. _getting_started:
 
-
-***************
 Getting started
-***************
-
-.. _installing-docdir:
-
-Installing your doc directory
 =============================
+WaterfowlDetector platform mainly consists of two parts, training and inference.
 
-You may already have sphinx `sphinx <http://sphinx.pocoo.org/>`_
-installed -- you can check by doing::
+Training
+-------------------------------
 
-  python -c 'import sphinx'
+Data preparation
+++++++++++++++++++++++
 
-If that fails grab the latest version of and install it with::
+Although we provide pretrained model of our six datasets, we also support customized training on your own bird images. If you want to train you custom datasets, you should prepare your dataset in `COCO <https://cocodataset.org/#format-data format>`_  format.
 
-  > sudo easy_install -U Sphinx
+Or, if your high resolution images are labeled by `labelme <https://github.com/wkentaro/labelme>`_, you should have json files which stroe annotation information for each image. In that case provide script can make your dataset prepared for training.
+You can run the following line to prepare your training dataset::
 
-Now you are ready to build a template for your docs, using
-sphinx-quickstart::
+  cd images
+  python data_preparation.py -p [path to your image folder]
 
-  > sphinx-quickstart
-
-accepting most of the defaults.  I choose "sampledoc" as the name of my
-project.  cd into your new directory and check the contents::
-
-  home:~/tmp/sampledoc> ls
-  Makefile	_static		conf.py
-  _build		_templates	index.rst
-
-The index.rst is the master ReST for your project, but before adding
-anything, let's see if we can build some html::
-
-  make html
-
-If you now point your browser to :file:`_build/html/index.html`, you
-should see a basic sphinx site.
+After that, you should have all of your high resolution images cropped and saved in a folder called :file:`all_small`. In that folder you will find all of cropped images and annotation json files. There is a json file :file:`bird_real.json` which include all annotation information for images containing birds. cropped images without birds will not include in :file:`bird_real.json`.
 
 
-.. _fetching-the-data:
+Training start
+++++++++++++++++++++++
+After you finish data preparation and configuration, you can start training with one command::
 
-Fetching the data
------------------
+  python train_bird_faster_fpn.py -p [path to your image folder] -m [model name you decide]
 
-Now we will start to customize out docs.  Grab a couple of files from
-the `web site <https://github.com/matplotlib/sampledoc>`_
-or git.  You will need :file:`getting_started.rst` and
-:file:`_static/basic_screenshot.png`.  All of the files live in the
-"completed" version of this tutorial, but since this is a tutorial,
-we'll just grab them one at a time, so you can learn what needs to be
-changed where.  Since we have more files to come, I'm going to grab
-the whole git directory and just copy the files I need over for now.
-First, I'll cd up back into the directory containing my project, check
-out the "finished" product from git, and then copy in just the files I
-need into my :file:`sampledoc` directory::
-
-  home:~/tmp/sampledoc> pwd
-  /Users/jdhunter/tmp/sampledoc
-  home:~/tmp/sampledoc> cd ..
-  home:~/tmp> git clone https://github.com/matplotlib/sampledoc.git tutorial
-  Cloning into 'tutorial'...
-  remote: Counting objects: 87, done.
-  remote: Compressing objects: 100% (43/43), done.
-  remote: Total 87 (delta 45), reused 83 (delta 41)
-  Unpacking objects: 100% (87/87), done.
-  Checking connectivity... done
-  home:~/tmp> cp tutorial/getting_started.rst sampledoc/
-  home:~/tmp> cp tutorial/_static/basic_screenshot.png sampledoc/_static/
-
-The last step is to modify :file:`index.rst` to include the
-:file:`getting_started.rst` file (be careful with the indentation, the
-"g" in "getting_started" should line up with the ':' in ``:maxdepth``::
-
-  Contents:
-
-  .. toctree::
-     :maxdepth: 2
-
-     getting_started.rst
-
-and then rebuild the docs::
-
-  cd sampledoc
-  make html
+The trained model will be saved in :file:`/models/model_name`. Training weight will be saved in :file:`model_final.pth`
 
 
-When you reload the page by refreshing your browser pointing to
-:file:`_build/html/index.html`, you should see a link to the
-"Getting Started" docs, and in there this page with the screenshot.
-`Voila!`
+Inference and evaluation
+-------------------------------
+Our scripts support inference image with any size. The model infers all low-resolution images and projects all inference results back to high-resolution images.
 
-We can also use the image directive in :file:`index.rst` to include to the screenshot above
-with::
+Inference with ground truth label
++++++++++++++++++++++++++++++++++++++++++++++
 
+If you have ground truth annoation file :file:`bird.json` in your :file:`all_small` folder, you can do the inference with::
 
-Next we'll customize the look and feel of our site to give it a logo,
-some custom css, and update the navigation panels to look more like
-the `sphinx <http://sphinx.pocoo.org/>`_ site itself -- see
-:ref:`custom_look`.
+  python image_inference_bird.py -p [path to your image folder] -m [model name] -t [confidence threshold]
+
+Instead of MAP and MAR, we use precision, recall and f1-score to evaluate our models performance at the threshold you set. Both inferred images and evaluation results will be saved in your image folder.
+
+Inference without ground truth label
++++++++++++++++++++++++++++++++++++++++++++++
+You can also inference your images although no ground truth labels provided. You can use same command but no evaluation will be generated.
+
+.. image:: _static/Cloud_Ice_60m_test.JPG
+   :align: center

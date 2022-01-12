@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>High Lights &mdash; bird-web 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installing WaterfowlDetector" href="install.html" />
+    <link rel="prev" title="What is WaterfowlDetector?" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> bird-web
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is WaterfowlDetector?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">High Lights</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#datasets-with-high-diversity">Datasets with high diversity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prebuilt-models">Prebuilt models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#crop-and-merge">Crop and merge</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installing WaterfowlDetector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets and Pretrained Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">bird-web</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>High Lights</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Highlights.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="high-lights">
+<h1>High Lights<a class="headerlink" href="#high-lights" title="Permalink to this headline">¶</a></h1>
+<p>As an end-to-end deep learning platform which focus on bird detectrion in RGB images, WaterfowlDetector has advantages on dealing with some specific problems when training and detecting small-bird objects in high resolution aerial images. These tricks can help you get better detecting performance without changing the network itself.</p>
+<section id="datasets-with-high-diversity">
+<h2>Datasets with high diversity<a class="headerlink" href="#datasets-with-high-diversity" title="Permalink to this headline">¶</a></h2>
+<p>With years of effort, we collect birds/decoys images from different resevation area in Missouri and make them into six datasets. These images are taken under different background, seasons, light conditions and bird density. Data diversity will cause great challenge to the models and make it robust to distinguish bird among many bird-like backgrounds.</p>
+</section>
+<section id="prebuilt-models">
+<h2>Prebuilt models<a class="headerlink" href="#prebuilt-models" title="Permalink to this headline">¶</a></h2>
+<p>We provide six pretrained models based on six datasets we have. These model are trained with same hyperparameters but inference performance may vary. We also provide some general models which are trained by part or all of six datasets. Comparison of inference performance is welcome.</p>
+</section>
+<section id="crop-and-merge">
+<h2>Crop and merge<a class="headerlink" href="#crop-and-merge" title="Permalink to this headline">¶</a></h2>
+<p>Because of the limitaion of GPU memory and computation, we crop high resolution images to low resolution ones when training and infering. The model will infer all low resolution images and merge the inference result to the high resolution ones. You don’t need to worry about image size adjustment because we have done it for you!</p>
+<img alt="_images/crop.png" class="align-center" src="_images/crop.png" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="What is WaterfowlDetector?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="install.html" class="btn btn-neutral float-right" title="Installing WaterfowlDetector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Yang Zhang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
