@@ -18,7 +18,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'bird-web'
+project = 'WaterfowlDetector'
 copyright = '2022, Yang Zhang'
 author = 'Yang Zhang'
 
