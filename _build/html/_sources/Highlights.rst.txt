@@ -1,5 +1,5 @@
 
-High Lights
+Key Features
 =============================
 As an end-to-end deep learning platform which focus on bird detectrion in RGB images, WaterfowlDetector has advantages on dealing with some specific problems when training and detecting small-bird objects in high resolution aerial images. These tricks can help you get better detecting performance without changing the network itself.
 
@@ -16,10 +16,12 @@ We provide six pretrained models based on six datasets we have. These model are 
 Crop and merge
 -------------------------
 
-Because of the limitaion of GPU memory and computation, we crop high resolution images to low resolution ones when training and infering. The model will infer all low resolution images and merge the inference result to the high resolution ones. You don't need to worry about image size adjustment because we have done it for you!
+Because of the limitaion of GPU memory and computation, we crop high resolution images to low resolution ones to do training and infering,which means we will crop big images firstly and then use the cropped images as inputs of models. We will merge the inference results back after we get predicted bboxes of cropped images. You don't need to worry about image size adjustment because we have done it for you!
 
-.. image:: _static/crop.png
+.. figure:: _static/crop.png
    :align: center
+
+   Cropped big image
 
 
 

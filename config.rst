@@ -2,7 +2,7 @@
 Configuration
 =============================
 
-Some basic training configurations are saved in :file:`/configs/Base-RCNN-FPN.yaml`.
+Some basic training configurations are saved in :file:`/configs/Base-RCNN-FPN.yaml`. For more details you can check detectron2's `git repository <https://github.com/facebookresearch/detectron2/blob/main/detectron2/config/defaults.py>`_. 
 
 .. code-block:: python
 	:linenos:
@@ -79,7 +79,7 @@ You can also change training configuration in :file:`train_bird_faster_fpn.py`. 
 	    cfg.SOLVER.GAMMA = 0.1
 	    cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.05
 	    cfg.SOLVER.MAX_ITER = 60000
-	    cfg.MODEL.ROI_HEADS.NUM_CLASSES = 1  # only has one class (ballon)
+	    cfg.MODEL.ROI_HEADS.NUM_CLASSES = 1
 	    os.makedirs(cfg.OUTPUT_DIR, exist_ok=True)
 	    trainer = Trainer(cfg) 
 	    trainer.resume_or_load(resume=False)

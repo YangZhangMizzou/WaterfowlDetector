@@ -16,8 +16,10 @@ We use a DJI Mavic Pro 2 to collect many aerial images of waterfowl in Missouri 
    "Bird-E", "Grand Pass", 694, "512*512",79447,"90","Fall/Winter","Birds"
    "Bird-F", "Pershing park", 26, "3648*5472",1936,"30-60","Winter/Spring","Birds"
 
-.. image:: _static/6.png
+.. figure:: _static/6.png
    :align: center
+
+   Example images of six datasets
 
 Pretrained models
 -------------------------------

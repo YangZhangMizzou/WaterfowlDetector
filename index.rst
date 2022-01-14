@@ -7,10 +7,10 @@ Welcome to WaterfowlDetector's documentation!
 
    introduction
    Highlights
-   install
    datasets
-   config
+   install  
    getting_started
+   config
    authors
    faq
 

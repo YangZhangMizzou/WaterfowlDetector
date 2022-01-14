@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>High Lights &mdash; WaterfowlDetector 1.0.0 documentation</title>
+  <title>Key Features &mdash; WaterfowlDetector 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,7 +18,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installing WaterfowlDetector" href="install.html" />
+    <link rel="next" title="Datasets and Pretrained Models" href="datasets.html" />
     <link rel="prev" title="What is WaterfowlDetector?" href="introduction.html" /> 
 </head>
 
@@ -39,16 +39,16 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">What is WaterfowlDetector?</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">High Lights</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Key Features</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#datasets-with-high-diversity">Datasets with high diversity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prebuilt-models">Prebuilt models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#crop-and-merge">Crop and merge</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Installing WaterfowlDetector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets and Pretrained Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installing WaterfowlDetector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
 </ul>
@@ -67,7 +67,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>High Lights</li>
+      <li>Key Features</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/Highlights.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -77,8 +77,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="high-lights">
-<h1>High Lights<a class="headerlink" href="#high-lights" title="Permalink to this headline">¶</a></h1>
+  <section id="key-features">
+<h1>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h1>
 <p>As an end-to-end deep learning platform which focus on bird detectrion in RGB images, WaterfowlDetector has advantages on dealing with some specific problems when training and detecting small-bird objects in high resolution aerial images. These tricks can help you get better detecting performance without changing the network itself.</p>
 <section id="datasets-with-high-diversity">
 <h2>Datasets with high diversity<a class="headerlink" href="#datasets-with-high-diversity" title="Permalink to this headline">¶</a></h2>
@@ -90,8 +90,13 @@
 </section>
 <section id="crop-and-merge">
 <h2>Crop and merge<a class="headerlink" href="#crop-and-merge" title="Permalink to this headline">¶</a></h2>
-<p>Because of the limitaion of GPU memory and computation, we crop high resolution images to low resolution ones when training and infering. The model will infer all low resolution images and merge the inference result to the high resolution ones. You don’t need to worry about image size adjustment because we have done it for you!</p>
-<img alt="_images/crop.png" class="align-center" src="_images/crop.png" />
+<p>Because of the limitaion of GPU memory and computation, we crop high resolution images to low resolution ones to do training and infering,which means we will crop big images firstly and then use the cropped images as inputs of models. We will merge the inference results back after we get predicted bboxes of cropped images. You don’t need to worry about image size adjustment because we have done it for you!</p>
+<figure class="align-center" id="id1">
+<img alt="_images/crop.png" src="_images/crop.png" />
+<figcaption>
+<p><span class="caption-text">Cropped big image</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 
@@ -100,7 +105,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="introduction.html" class="btn btn-neutral float-left" title="What is WaterfowlDetector?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="install.html" class="btn btn-neutral float-right" title="Installing WaterfowlDetector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="datasets.html" class="btn btn-neutral float-right" title="Datasets and Pretrained Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
