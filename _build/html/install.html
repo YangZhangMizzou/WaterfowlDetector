@@ -42,6 +42,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Highlights.html">Key Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets and Pretrained Models</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installing WaterfowlDetector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#required-python-packages">Required Python Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#source-installation">Source Installation</a></li>
 </ul>
@@ -78,15 +79,23 @@
              
   <section id="installing-waterfowldetector">
 <h1>Installing WaterfowlDetector<a class="headerlink" href="#installing-waterfowldetector" title="Permalink to this headline">¶</a></h1>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Linux or windows</p></li>
+<li><p>Recommend installing cuda v11.3 and pytorch 1.10.0</p></li>
+<li><p>Recommend running on a gpu with compatible cuda</p></li>
+<li><p>python &gt;= 3.7</p></li>
+</ol>
+</section>
 <section id="required-python-packages">
 <h2>Required Python Packages<a class="headerlink" href="#required-python-packages" title="Permalink to this headline">¶</a></h2>
-<p>You can install our WaterfowlDetector platform on your Ubuntu OS. Firstly, you need to install the following python packages:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span>
-<span class="n">pytorch</span>
-<span class="n">Detectron2</span>
-<span class="n">pandas</span>
-<span class="n">cv2</span>
-<span class="n">tqdm</span>
+<p>You can install our WaterfowlDetector platform on your Ubuntu OS. Firstly, you need to install the following python packages with pip3:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">numpy</span><span class="o">==</span><span class="mf">1.23.3</span>
+<span class="n">pip3</span> <span class="n">install</span> <span class="n">pandas</span>
+<span class="n">pip3</span> <span class="n">install</span> <span class="n">cv2</span>
+<span class="n">pip3</span> <span class="n">install</span> <span class="n">tqdm</span>
+<span class="n">pip3</span> <span class="n">install</span> <span class="n">Detectron2</span>
 </pre></div>
 </div>
 <p>Detectron2 is Facebook AI Reseach’s next generation library that provide state-of-art detection and segmentation algorithms. You can refer to their git repository when you install Detectron2. See <a class="reference external" href="https://github.com/facebookresearch/detectron2/">Detectron2</a></p>

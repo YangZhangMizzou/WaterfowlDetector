@@ -21,8 +21,21 @@ We use a DJI Mavic Pro 2 to collect many aerial images of waterfowl in Missouri 
 
    Example images of six datasets
 
-Pretrained models
+Bird-D Illinois River
 -------------------------------
+Andy's parts goes here...
+To download this dataset, please click `here <http://www.baidu.com>`_.
+
+Bird-D contain various background such as water, land, plants in the water and ice. This data diversity may cause great challenges for our models to detect all the birds but not misrecognizing some confusing background as birds. It is why this dataset is still the most challenging one on which we only get 72.4% detection f1-score.
+
+.. figure:: _static/birdd.png
+   :align: center
+
+   Images with different background in Bird-D dataset.
+
+
+Pretrained models
+
 We also provide pretrained model for our six datasets from A to F. Also, we provide general models which are trained by part or all of six datasets. These Pretrained models available here. Download and unzip it into folder :file:`models`
 
 .. csv-table:: Pretrained models
