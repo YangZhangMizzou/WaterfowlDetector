@@ -1,9 +1,9 @@
 ****************************
 What is WaterfowlDetector?
 ****************************
-WaterfowlDetector is a deep learning platform for training and predicting birds on aerial RGB images. We also includes six different datasets which contain manully labeled RGB images collected by our Mavic pro 2 drone from different conservation areas in Missouri. Based on `Detectron2 <https://github.com/facebookresearch/detectron2/>`_, a Facebook AI Research's next generation library, WaterfowlDetector include FasterRcnn models pretrained on these datasets. You can also train and predict your own bird datasets with custom models.
+WaterfowlDetector is an end-to-end deep learning platform for developing and using artificial intelligence to detect and classify species of waterfowl on  aerial color (RGB) images. We developed ten datasets from aerial images taken via crewed aircraft and a DJI Mavic Pro 2 uncrewed aerial systems (UAS, or drone).  We currently have three detection models(Retinanet,Yolov5 and FasterRcnn) and three species classification models(Resnet, Resnext and Efficientnet). Instructions for training and executing your own custom models on your own bird datasets are also included.
 
-.. figure:: _static/introduction.png
+.. figure:: _static/Cloud_Ice_60m_test.JPG
    :align: center
 
-   aerial color image(RGB)
+   Aerial color image taken by DJI Mavic 2 Pro at 60 meters with the detected birds and their confidence scores.

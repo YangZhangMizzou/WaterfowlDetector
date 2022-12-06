@@ -1,5 +1,5 @@
 
-Welcome to WaterfowlDetector's documentation!
+Welcome to WaterfowlDetector!
 ================================================
 
 .. toctree::
@@ -8,9 +8,6 @@ Welcome to WaterfowlDetector's documentation!
    introduction
    Highlights
    datasets
-   install  
-   getting_started
-   config
+   for_developers
    authors
    faq
-

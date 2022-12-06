@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Developers &mdash; WaterfowlDetector 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Authors" href="authors.html" />
+    <link rel="prev" title="Datasets and Pretrained Models" href="datasets.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> WaterfowlDetector
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What is WaterfowlDetector?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Highlights.html">Key Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets and Pretrained Models</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">For Developers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-waterfowldetector">Installing WaterfowlDetector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required-python-packages">Required Python Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#source-installation">Source Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#training">Training</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inference">Inference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Training</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-preparation">Data preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#training-start">Training start</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#inference-and-evaluation">Inference and evaluation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inference-with-ground-truth-label">Inference with ground truth label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inference-without-ground-truth-label">Inference without ground truth label</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WaterfowlDetector</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>For Developers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/for_developers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="for-developers">
+<h1>For Developers<a class="headerlink" href="#for-developers" title="Permalink to this headline">¶</a></h1>
+<section id="installing-waterfowldetector">
+<h2>Installing WaterfowlDetector<a class="headerlink" href="#installing-waterfowldetector" title="Permalink to this headline">¶</a></h2>
+<section id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Linux or windows</p></li>
+<li><p>Recommend installing cuda v11.3 and pytorch 1.10.0</p></li>
+<li><p>Recommend running on a gpu with compatible cuda</p></li>
+<li><p>python &gt;= 3.7</p></li>
+</ol>
+</section>
+<section id="required-python-packages">
+<h3>Required Python Packages<a class="headerlink" href="#required-python-packages" title="Permalink to this headline">¶</a></h3>
+<p>You can install our WaterfowlDetector platform on your Ubuntu OS. Firstly, you need to install the following python packages with pip3:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">numpy</span><span class="o">==</span><span class="mf">1.23.3</span>
+<span class="n">pip3</span> <span class="n">install</span> <span class="n">pandas</span>
+<span class="n">pip3</span> <span class="n">install</span> <span class="n">cv2</span>
+<span class="n">pip3</span> <span class="n">install</span> <span class="n">tqdm</span>
+<span class="n">pip3</span> <span class="n">install</span> <span class="n">Detectron2</span>
+</pre></div>
+</div>
+<p>Detectron2 is Facebook AI Reseach’s next generation library that provide state-of-art detection and segmentation algorithms. You can refer to their git repository when you install Detectron2. See <a class="reference external" href="https://github.com/facebookresearch/detectron2/">Detectron2</a></p>
+</section>
+<section id="source-installation">
+<h3>Source Installation<a class="headerlink" href="#source-installation" title="Permalink to this headline">¶</a></h3>
+<p>All of our scripts and sample data are uploaded to our <a class="reference external" href="https://github.com/YangZhangMizzou/Bird-Detectron2.git">git repository</a>. You can easily download and unzip it yourself or install by following code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">YangZhangMizzou</span><span class="o">/</span><span class="n">Bird</span><span class="o">-</span><span class="n">Detectron2</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">Bird</span><span class="o">-</span><span class="n">Detectron2</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Some basic training configurations are saved in <code class="file docutils literal notranslate"><span class="pre">/configs/Base-RCNN-FPN.yaml</span></code>. For more details you can check detectron2’s <a class="reference external" href="https://github.com/facebookresearch/detectron2/blob/main/detectron2/config/defaults.py">detectron2 repository</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">MODEL</span><span class="p">:</span>
+<span class="linenos"> 2</span>  <span class="n">META_ARCHITECTURE</span><span class="p">:</span> <span class="s2">&quot;GeneralizedRCNN&quot;</span>
+<span class="hll"><span class="linenos"> 3</span>  <span class="n">BACKBONE</span><span class="p">:</span>
+</span><span class="linenos"> 4</span>    <span class="n">NAME</span><span class="p">:</span> <span class="s2">&quot;build_resnet_fpn_backbone&quot;</span>
+<span class="hll"><span class="linenos"> 5</span>  <span class="n">RESNETS</span><span class="p">:</span>
+</span><span class="linenos"> 6</span>    <span class="n">OUT_FEATURES</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;res2&quot;</span><span class="p">,</span> <span class="s2">&quot;res3&quot;</span><span class="p">,</span> <span class="s2">&quot;res4&quot;</span><span class="p">,</span> <span class="s2">&quot;res5&quot;</span><span class="p">]</span>
+<span class="linenos"> 7</span>  <span class="n">FPN</span><span class="p">:</span>
+<span class="linenos"> 8</span>    <span class="n">IN_FEATURES</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;res2&quot;</span><span class="p">,</span> <span class="s2">&quot;res3&quot;</span><span class="p">,</span> <span class="s2">&quot;res4&quot;</span><span class="p">,</span> <span class="s2">&quot;res5&quot;</span><span class="p">]</span>
+<span class="linenos"> 9</span>  <span class="n">ANCHOR_GENERATOR</span><span class="p">:</span>
+<span class="linenos">10</span>    <span class="n">SIZES</span><span class="p">:</span> <span class="p">[[</span><span class="mi">32</span><span class="p">],</span> <span class="p">[</span><span class="mi">64</span><span class="p">],</span> <span class="p">[</span><span class="mi">128</span><span class="p">],</span> <span class="p">[</span><span class="mi">256</span><span class="p">],</span> <span class="p">[</span><span class="mi">512</span><span class="p">]]</span>  <span class="c1"># One size for each in feature map</span>
+<span class="linenos">11</span>    <span class="n">ASPECT_RATIOS</span><span class="p">:</span> <span class="p">[[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]]</span>  <span class="c1"># Three aspect ratios (same for all in feature maps)</span>
+<span class="linenos">12</span>  <span class="n">RPN</span><span class="p">:</span>
+<span class="linenos">13</span>    <span class="n">IN_FEATURES</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;p2&quot;</span><span class="p">,</span> <span class="s2">&quot;p3&quot;</span><span class="p">,</span> <span class="s2">&quot;p4&quot;</span><span class="p">,</span> <span class="s2">&quot;p5&quot;</span><span class="p">,</span> <span class="s2">&quot;p6&quot;</span><span class="p">]</span>
+<span class="linenos">14</span>    <span class="n">PRE_NMS_TOPK_TRAIN</span><span class="p">:</span> <span class="mi">2000</span>  <span class="c1"># Per FPN level</span>
+<span class="linenos">15</span>    <span class="n">PRE_NMS_TOPK_TEST</span><span class="p">:</span> <span class="mi">1000</span>  <span class="c1"># Per FPN level</span>
+<span class="linenos">16</span>    <span class="c1"># Detectron1 uses 2000 proposals per-batch,</span>
+<span class="linenos">17</span>    <span class="c1"># (See &quot;modeling/rpn/rpn_outputs.py&quot; for details of this legacy issue)</span>
+<span class="linenos">18</span>    <span class="c1"># which is approximately 1000 proposals per-image since the default batch size for FPN is 2.</span>
+<span class="linenos">19</span>    <span class="n">POST_NMS_TOPK_TRAIN</span><span class="p">:</span> <span class="mi">1000</span>
+<span class="linenos">20</span>    <span class="n">POST_NMS_TOPK_TEST</span><span class="p">:</span> <span class="mi">1000</span>
+<span class="linenos">21</span>  <span class="n">ROI_HEADS</span><span class="p">:</span>
+<span class="linenos">22</span>    <span class="n">NAME</span><span class="p">:</span> <span class="s2">&quot;StandardROIHeads&quot;</span>
+<span class="linenos">23</span>    <span class="n">IN_FEATURES</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;p2&quot;</span><span class="p">,</span> <span class="s2">&quot;p3&quot;</span><span class="p">,</span> <span class="s2">&quot;p4&quot;</span><span class="p">,</span> <span class="s2">&quot;p5&quot;</span><span class="p">]</span>
+<span class="linenos">24</span>  <span class="n">ROI_BOX_HEAD</span><span class="p">:</span>
+<span class="linenos">25</span>    <span class="n">NAME</span><span class="p">:</span> <span class="s2">&quot;FastRCNNConvFCHead&quot;</span>
+<span class="linenos">26</span>    <span class="n">NUM_FC</span><span class="p">:</span> <span class="mi">2</span>
+<span class="linenos">27</span>    <span class="n">POOLER_RESOLUTION</span><span class="p">:</span> <span class="mi">7</span>
+<span class="linenos">28</span>  <span class="n">ROI_MASK_HEAD</span><span class="p">:</span>
+<span class="linenos">29</span>    <span class="n">NAME</span><span class="p">:</span> <span class="s2">&quot;MaskRCNNConvUpsampleHead&quot;</span>
+<span class="linenos">30</span>    <span class="n">NUM_CONV</span><span class="p">:</span> <span class="mi">4</span>
+<span class="linenos">31</span>    <span class="n">POOLER_RESOLUTION</span><span class="p">:</span> <span class="mi">14</span>
+<span class="linenos">32</span><span class="n">DATASETS</span><span class="p">:</span>
+<span class="linenos">33</span>  <span class="n">TRAIN</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;coco_2017_train&quot;</span><span class="p">,)</span>
+<span class="linenos">34</span>  <span class="n">TEST</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;coco_2017_val&quot;</span><span class="p">,)</span>
+<span class="linenos">35</span><span class="n">SOLVER</span><span class="p">:</span>
+<span class="linenos">36</span>  <span class="n">IMS_PER_BATCH</span><span class="p">:</span> <span class="mi">16</span>
+<span class="linenos">37</span>  <span class="n">BASE_LR</span><span class="p">:</span> <span class="mf">0.02</span>
+<span class="linenos">38</span>  <span class="n">STEPS</span><span class="p">:</span> <span class="p">(</span><span class="mi">60000</span><span class="p">,</span> <span class="mi">80000</span><span class="p">)</span>
+<span class="linenos">39</span>  <span class="n">MAX_ITER</span><span class="p">:</span> <span class="mi">90000</span>
+<span class="linenos">40</span><span class="n">INPUT</span><span class="p">:</span>
+<span class="linenos">41</span>  <span class="n">MIN_SIZE_TRAIN</span><span class="p">:</span> <span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">672</span><span class="p">,</span> <span class="mi">704</span><span class="p">,</span> <span class="mi">736</span><span class="p">,</span> <span class="mi">768</span><span class="p">,</span> <span class="mi">800</span><span class="p">)</span>
+<span class="linenos">42</span><span class="n">VERSION</span><span class="p">:</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<section id="training">
+<h3>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h3>
+<p>You can also change training configuration in <code class="file docutils literal notranslate"><span class="pre">train_bird_faster_fpn.py</span></code>. all of the configuration in <code class="file docutils literal notranslate"><span class="pre">train_bird_faster_fpn.py</span></code> will overwrite configuration in <code class="file docutils literal notranslate"><span class="pre">/configs/Base-RCNN-FPN.yaml</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">make_trainer</span><span class="p">(</span><span class="n">image_dir</span><span class="p">,</span><span class="n">model_name</span><span class="p">,</span><span class="n">image_num</span><span class="p">,</span><span class="n">lr</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="n">register_coco_instances</span><span class="p">(</span><span class="s2">&quot;bird_dataset&quot;</span><span class="p">,</span> <span class="p">{},</span> <span class="n">image_dir</span><span class="o">+</span><span class="s2">&quot;/tree.json&quot;</span><span class="p">,</span> <span class="n">image_dir</span><span class="p">)</span>
+<span class="hll"><span class="linenos"> 3</span>    <span class="n">birds_metadata</span> <span class="o">=</span> <span class="n">MetadataCatalog</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">)</span>
+</span><span class="linenos"> 4</span>    <span class="n">birds_metadata</span><span class="o">.</span><span class="n">thing_classes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bird&#39;</span><span class="p">]</span>
+<span class="hll"><span class="linenos"> 5</span>    <span class="n">cfg</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">()</span>
+</span><span class="linenos"> 6</span>    <span class="n">cfg</span><span class="o">.</span><span class="n">merge_from_file</span><span class="p">(</span><span class="s2">&quot;./configs/COCO-Detection/faster_rcnn_R_50_FPN_1x.yaml&quot;</span><span class="p">)</span>
+<span class="linenos"> 7</span>    <span class="n">cfg</span><span class="o">.</span><span class="n">OUTPUT_DIR</span> <span class="o">=</span> <span class="s1">&#39;./models/&#39;</span><span class="o">+</span><span class="n">model_name</span>
+<span class="linenos"> 8</span>    <span class="n">cfg</span><span class="o">.</span><span class="n">DATASETS</span><span class="o">.</span><span class="n">TRAIN</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;bird_dataset&quot;</span><span class="p">,)</span>
+<span class="linenos"> 9</span>    <span class="n">cfg</span><span class="o">.</span><span class="n">DATASETS</span><span class="o">.</span><span class="n">TEST</span> <span class="o">=</span> <span class="p">()</span>
+<span class="linenos">10</span>    <span class="n">cfg</span><span class="o">.</span><span class="n">DATALOADER</span><span class="o">.</span><span class="n">FILTER_EMPTY_ANNOTATIONS</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="linenos">11</span>    <span class="n">cfg</span><span class="o">.</span><span class="n">SOLVER</span><span class="o">.</span><span class="n">WARMUP_ITERS</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="linenos">12</span>    <span class="n">cfg</span><span class="o">.</span><span class="n">DATALOADER</span><span class="o">.</span><span class="n">NUM_WORKERS</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="linenos">13</span>    <span class="n">cfg</span><span class="o">.</span><span class="n">SOLVER</span><span class="o">.</span><span class="n">IMS_PER_BATCH</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">14</span>    <span class="n">cfg</span><span class="o">.</span><span class="n">MODEL</span><span class="o">.</span><span class="n">ROI_HEADS</span><span class="o">.</span><span class="n">BATCH_SIZE_PER_IMAGE</span> <span class="o">=</span> <span class="mi">512</span>
+<span class="linenos">15</span>    <span class="n">cfg</span><span class="o">.</span><span class="n">SOLVER</span><span class="o">.</span><span class="n">BASE_LR</span> <span class="o">=</span> <span class="n">lr</span>
+<span class="linenos">16</span>    <span class="n">cfg</span><span class="o">.</span><span class="n">SOLVER</span><span class="o">.</span><span class="n">STEPS</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30000</span><span class="p">,</span><span class="mi">45000</span><span class="p">)</span>
+<span class="linenos">17</span>    <span class="n">cfg</span><span class="o">.</span><span class="n">SOLVER</span><span class="o">.</span><span class="n">GAMMA</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="linenos">18</span>    <span class="n">cfg</span><span class="o">.</span><span class="n">MODEL</span><span class="o">.</span><span class="n">ROI_HEADS</span><span class="o">.</span><span class="n">SCORE_THRESH_TEST</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="linenos">19</span>    <span class="n">cfg</span><span class="o">.</span><span class="n">SOLVER</span><span class="o">.</span><span class="n">MAX_ITER</span> <span class="o">=</span> <span class="mi">60000</span>
+<span class="linenos">20</span>    <span class="n">cfg</span><span class="o">.</span><span class="n">MODEL</span><span class="o">.</span><span class="n">ROI_HEADS</span><span class="o">.</span><span class="n">NUM_CLASSES</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">21</span>    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">OUTPUT_DIR</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">22</span>    <span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+<span class="linenos">23</span>    <span class="n">trainer</span><span class="o">.</span><span class="n">resume_or_load</span><span class="p">(</span><span class="n">resume</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">24</span>    <span class="k">return</span> <span class="n">trainer</span>
+</pre></div>
+</div>
+</section>
+<section id="inference">
+<h3>Inference<a class="headerlink" href="#inference" title="Permalink to this headline">¶</a></h3>
+<p>There are also some configurations in <code class="file docutils literal notranslate"><span class="pre">image_inference_bird.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">cfg</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">()</span>
+<span class="linenos">2</span><span class="n">cfg</span><span class="o">.</span><span class="n">merge_from_file</span><span class="p">(</span><span class="s1">&#39;./pretrained_weight/COCO-Detection/faster_rcnn_R_50_FPN_1x.yaml&#39;</span><span class="p">)</span>
+<span class="hll"><span class="linenos">3</span><span class="n">cfg</span><span class="o">.</span><span class="n">MODEL</span><span class="o">.</span><span class="n">ANCHOR_GENERATOR</span><span class="o">.</span><span class="n">SIZES</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="p">[</span><span class="mi">32</span><span class="p">],[</span><span class="mi">64</span><span class="p">],[</span><span class="mi">128</span><span class="p">]]</span>
+</span><span class="linenos">4</span><span class="n">cfg</span><span class="o">.</span><span class="n">OUTPUT_DIR</span> <span class="o">=</span> <span class="n">model_name</span>
+<span class="hll"><span class="linenos">5</span><span class="n">cfg</span><span class="o">.</span><span class="n">MODEL</span><span class="o">.</span><span class="n">ROI_HEADS</span><span class="o">.</span><span class="n">NUM_CLASSES</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># only has one class (ballon)</span>
+</span><span class="linenos">6</span><span class="n">cfg</span><span class="o">.</span><span class="n">MODEL</span><span class="o">.</span><span class="n">WEIGHTS</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">OUTPUT_DIR</span><span class="p">,</span> <span class="s2">&quot;model_final.pth&quot;</span><span class="p">)</span>
+<span class="linenos">7</span><span class="n">cfg</span><span class="o">.</span><span class="n">MODEL</span><span class="o">.</span><span class="n">ROI_HEADS</span><span class="o">.</span><span class="n">SCORE_THRESH_TEST</span> <span class="o">=</span> <span class="mf">0.1</span>   <span class="c1"># set the testing threshold for this model</span>
+<span class="linenos">8</span><span class="n">predictor</span> <span class="o">=</span> <span class="n">DefaultPredictor</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id1">
+<h2>Training<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<section id="data-preparation">
+<h3>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h3>
+<p>Although we provide pretrained model of our six datasets, we also support customized training on your own bird images. If you want to train you custom datasets, you should prepare your dataset in <a class="reference external" href="https://cocodataset.org/#format-dataformat">COCO</a>  format.</p>
+<p>Or, if your high resolution images are labeled by <a class="reference external" href="https://github.com/wkentaro/labelme">labelme</a>, you should have json files which stroe annotation information for each image. In that case provide script can make your dataset prepared for training.
+You can run the following line to prepare your training dataset:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">images</span>
+<span class="n">python</span> <span class="n">data_preparation</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">p</span> <span class="p">[</span><span class="n">path</span> <span class="n">to</span> <span class="n">your</span> <span class="n">image</span> <span class="n">folder</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>After that, you should have all of your high resolution images cropped and saved in a folder called <code class="file docutils literal notranslate"><span class="pre">all_small</span></code>. In that folder you will find all of cropped images and annotation json files. There is a json file <code class="file docutils literal notranslate"><span class="pre">bird_real.json</span></code> which include all annotation information for images containing birds. cropped images without birds will not include in <code class="file docutils literal notranslate"><span class="pre">bird_real.json</span></code>.</p>
+</section>
+<section id="training-start">
+<h3>Training start<a class="headerlink" href="#training-start" title="Permalink to this headline">¶</a></h3>
+<p>After you finish data preparation and configuration, you can start training with one command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">train_bird_faster_fpn</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">p</span> <span class="p">[</span><span class="n">path</span> <span class="n">to</span> <span class="n">your</span> <span class="n">image</span> <span class="n">folder</span><span class="p">]</span> <span class="o">-</span><span class="n">m</span> <span class="p">[</span><span class="n">model</span> <span class="n">name</span> <span class="n">you</span> <span class="n">decide</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The trained model will be saved in <code class="file docutils literal notranslate"><span class="pre">/models/model_name</span></code>. Training weight will be saved in <code class="file docutils literal notranslate"><span class="pre">model_final.pth</span></code></p>
+</section>
+</section>
+<section id="inference-and-evaluation">
+<h2>Inference and evaluation<a class="headerlink" href="#inference-and-evaluation" title="Permalink to this headline">¶</a></h2>
+<p>Our scripts support inference image with any size. The model infers all low-resolution images and projects all inference results back to high-resolution images.</p>
+<section id="inference-with-ground-truth-label">
+<h3>Inference with ground truth label<a class="headerlink" href="#inference-with-ground-truth-label" title="Permalink to this headline">¶</a></h3>
+<p>If you have ground truth annoation file <code class="file docutils literal notranslate"><span class="pre">bird.json</span></code> in your <code class="file docutils literal notranslate"><span class="pre">all_small</span></code> folder, you can do the inference with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">image_inference_bird</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">p</span> <span class="p">[</span><span class="n">path</span> <span class="n">to</span> <span class="n">your</span> <span class="n">image</span> <span class="n">folder</span><span class="p">]</span> <span class="o">-</span><span class="n">m</span> <span class="p">[</span><span class="n">model</span> <span class="n">name</span><span class="p">]</span> <span class="o">-</span><span class="n">t</span> <span class="p">[</span><span class="n">confidence</span> <span class="n">threshold</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Instead of MAP and MAR, we use precision, recall and f1-score to evaluate our models performance at the threshold you set. Both inferred images and evaluation results will be saved in your image folder.</p>
+</section>
+<section id="inference-without-ground-truth-label">
+<h3>Inference without ground truth label<a class="headerlink" href="#inference-without-ground-truth-label" title="Permalink to this headline">¶</a></h3>
+<p>You can also inference your images although no ground truth labels provided. You can use same command but no evaluation will be generated.</p>
+<img alt="_images/Cloud_Ice_60m_test.JPG" class="align-center" src="_images/Cloud_Ice_60m_test.JPG" />
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datasets.html" class="btn btn-neutral float-left" title="Datasets and Pretrained Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="authors.html" class="btn btn-neutral float-right" title="Authors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Yang Zhang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

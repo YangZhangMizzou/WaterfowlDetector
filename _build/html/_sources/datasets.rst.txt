@@ -20,34 +20,3 @@ We use a DJI Mavic Pro 2 to collect many aerial images of waterfowl in Missouri 
    :align: center
 
    Example images of six datasets
-
-Bird-D Illinois River
--------------------------------
-.. Andy's parts goes here...
-.. To download this dataset, please click here `datasets <http://www.baidu.com>`_.
-
-Bird-D contain various background such as water, land, plants in the water and ice. This data diversity may cause great challenges for our models to detect all the birds but not misrecognizing some confusing background as birds. It is why this dataset is still the most challenging one on which we only get 72.4% detection f1-score.
-
-.. figure:: _static/birdd.png
-   :align: center
-
-   Images with different background in Bird-D dataset.
-
-
-Pretrained models
-
-We also provide pretrained model for our six datasets from A to F. Also, we provide general models which are trained by part or all of six datasets. These Pretrained models available `here <https://drive.google.com/drive/folders/1Cv41H6agrxOlDDcfSmHs_4AgAINCwVQT?usp=sharing>`_ . Download and unzip it into folder :file:`models`
-
-.. csv-table:: Pretrained models
-   :header: "Model name", "Training dataset","Inference dataset","Precision","Recall","F1-Score"
-
-   "Fasterrcnn-A", "Bird-A", "Bird-A",0.823,0.893,0.857
-   "Fasterrcnn-B", "Bird-B", "Bird-B",0.914,0.840,0.876
-   "Fasterrcnn-C", "Bird-C", "Bird-C",0.540,0.896,0.674
-   "Fasterrcnn-D", "Bird-D", "Bird-D",0.659,0.804,0.724
-   "Fasterrcnn-E", "Bird-E", "Bird-E",0.998,0.818,0.899
-   "Fasterrcnn-F", "Bird-F", "Bird-F",0.916,0.965,0.940
-   "Fasterrcnn-high_density", "Bird-D,E","*","*","*","*"
-   "Fasterrcnn-Bird", "Bird-D to F","*","*","*","*"
-   "Fasterrcnn-Decoy", "Bird-A to C","*","*","*","*"
-   "General_Model", "Bird-A to F","*","*","*","*"
