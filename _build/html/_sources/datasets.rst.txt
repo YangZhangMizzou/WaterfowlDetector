@@ -4,7 +4,7 @@ Datasets and Pretrained Models
 
 Datasets
 -------------------------------
-We use a DJI Mavic Pro 2 to collect many aerial images of waterfowl in Missouri at different altitudes under different weather conditions. The table below provide examples of waterfowl of many colors, shapes, and sizes across many different habitat types in different weather conditions, all of which may affect the performance of deep learning models due to differences in the appearance of the waterfowl. Our datasets available here.
+We use a DJI Mavic Pro 2 to collect many aerial images of waterfowl in Missouri at different altitudes under different weather conditions. The table below provide examples of waterfowl of many colors, shapes, and sizes across many different habitat types in different weather conditions, all of which may affect the performance of deep learning models due to differences in the appearance of the waterfowl. Part(20 sample images with labels) of Dataset A-F can be downloaded form `waterfowl_dataset_A2F <https://drive.google.com/drive/folders/1SxM1svHVsWmBKqEvV4BrYN_tLxN_4Wrn?usp=sharing>`_ and Dataset G-J can be downloaded form `waterfowl_dataset_G2J <https://drive.google.com/drive/folders/1pITNJIIemHdO6uKQODDuKkraeS8KfglP?usp=sharing>`_.
 
 .. csv-table:: Datasets
    :header: "Datasets", "Location", "Number of images","sizes","Number of Birds","Altitude(m)","Season","Bird/Decoy"
@@ -15,6 +15,10 @@ We use a DJI Mavic Pro 2 to collect many aerial images of waterfowl in Missouri 
    "Bird-D", "Illinois River", 339, "3840*5760",28837,"90","Winter","Birds"
    "Bird-E", "Grand Pass", 694, "512*512",79447,"90","Fall/Winter","Birds"
    "Bird-F", "Pershing park", 26, "3648*5472",1936,"30-60","Winter/Spring","Birds"
+   "Bird-G", "Missouri Conservation areas", 181, "3648*5472",62758,"15-90","Winter/Spring","Birds"
+   "Bird-H", "Missouri Conservation areas", 177, "3648*5472",16738,"15-90","Winter/Spring","Decoy"
+   "Bird-I", "Missouri Conservation areas", 171, "3648*5472",7058,"15","Winter/Spring","Birds"
+   "Bird-J", "Missouri Conservation areas", 708, "3648*5472",111088,"15-90","Winter/Spring","Birds"
 
 .. figure:: _static/6.png
    :align: center
